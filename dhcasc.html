@@ -1,118 +1,576 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <title>Homepage</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
     <style>
-        /* CSS variables for background color */
-        :root {
-            --background: #E4FFF7;
-        }
+        body {
+    background: linear-gradient(to bottom, #fff7ad, #ffa9f9);
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Playful text animation styles */
-        .playful span {
-            position: relative;
-            color: #FF69B4; /* Set base pink color */
-            text-shadow: 
-                1px 1px 0 #FF69B4,
-                2px 2px 0 #FF69B4,
-                3px 3px 0 #FF69B4,
-                4px 4px 0 #FF69B4,
-                5px 5px 0 #FF69B4,
-                6px 6px 0 #FF69B4;
-            animation: scatter 1.75s infinite;
-        }
+.container {
+    width: 100%;
+    background-color: white;
+    height: 100vh; /* Adjust the height to cover the full screen */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    background-image: linear-gradient(45deg, #1F1717, #CE5A67, #F4BF96, #1F1717);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+}
 
-        .playful span:nth-child(2n) {
-            color: #FF1493; /* Another shade of pink */
-            text-shadow: 
-                1px 1px 0 #FF1493,
-                2px 2px 0 #FF1493,
-                3px 3px 0 #FF1493,
-                4px 4px 0 #FF1493,
-                5px 5px 0 #FF1493,
-                6px 6px 0 #FF1493;
-            animation-delay: 0.3s;
-        }
-
-        /* Playful text animation styles */
-        .playful span {
-            position: relative;
-            color: #f65369;
-            text-shadow: textShadow(0.25, 6, #E485F8);
-            animation: scatter 1.75s infinite;
-        }
-
-        .playful span:nth-child(2n) {
-            color: #832320;
-            text-shadow: textShadow(0.25, 6, #f1757f);
-            animation-delay: 0.3s;
-        }
-
-        .playful span:nth-child(3n) {
-            color: #d1144a;
-            text-shadow: textShadow(0.25, 6, #9f416d);
-            animation-delay: 0.15s;
-        }
-
-        .playful span:nth-child(5n) {
-            color: #ce5d7f;
-            text-shadow: textShadow(0.25, 6, #E485F8);
-            animation-delay: 0.4s;
-        }
-
-        .playful span:nth-child(7n), .playful span:nth-child(11n) {
-            color: #b2093b;
-            text-shadow: textShadow(0.25, 6, #a95959);
-            animation-delay: 0.25s;
-        }
-
-        /* Keyframes for the scatter animation */
-        @keyframes scatter {
+@keyframes color {
             0% {
-                top: 0;
+                background-position: 0% 50%;
             }
             50% {
-                top: -10px;
+                background-position: 100% 50%;
             }
             100% {
-                top: 0;
+                background-position: 0% 50%;
+            }}
+
+            .logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background: rgba(255, 241, 179, 0); /* Set background to transparent */
+    margin-right: 2%;
+    transition: background-color 0.5s ease-in-out;
+    z-index: 1000;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+}
+
+.transparent-bg {
+    background: rgba(255, 241, 179, 0.9); /* Adjust the background for non-transparent state */
+}
+.profile {
+    margin-top: 8%;
+    width: 20%;
+    height: auto;
+    cursor: pointer;
+    margin-left: 3%;
+    margin-top: 5%;
+}
+
+.glassmorph {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 40%;
+    position: relative;
+}
+
+.glassmorph-item {
+            margin: 20 15px; /* Adjusted margin for the buttons */
+            cursor: pointer;
+            position: relative;
+            margin-top: 8%;
+        }
+
+.glassmorph-item button {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: rgba(255, 241, 179, 0); /* Transparent background */
+    border: 1px solid rgba(255, 241, 179, 0);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.glassmorph-item button:hover,
+.glassmorph-item button:focus {
+    background: pink;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    border: 1px solid black;
+}
+
+.glassmorph-item:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+
+.glassmorph-item:hover .dropdown {
+    display: flex;
+}
+
+.logo-icon {
+    width: 100%; /* Adjust the width of your logo */
+    height: 30px; /* Adjust the height of your logo */
+    margin-right: 10px; /* Adjust spacing between logo and text */
+    align-items: center;
+    margin-top: 100%;
+}
+
+
+
+.rectangle {
+    width: 85%;
+    height: 73vh;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 175px;
+    z-index: 1;
+}
+
+.rectangle img {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    z-index: 2; /* Set a higher z-index to make the image appear in front */
+    position: absolute;
+    top: -150px;
+}
+
+.she {
+    text-decoration: none;
+    margin-top: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    border: 2px solid BLACK;
+    border-radius: 30px;
+    padding: 10px 20px;
+    background-color: pink;
+    font-weight: 600;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    color: black;
+    z-index: 3; /* Set a higher z-index to make the text appear in front */
+}
+
+.she:hover,
+.she:focus {
+    background: pink;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    border: 1px solid black;
+}
+
+.she::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.she:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.text {
+    position: absolute;
+    top: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-weight: 600;
+    z-index: 1;
+    margin-top: 34%;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.cute {
+    opacity: 50%;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 120%; /* Set the width to 100% to cover the entire container */
+    height: 180%; /* Set the height to 50% to crop below */
+    object-fit: cover;
+}
+
+.input {
+    margin: 30px auto;
+    position: absolute;
+    top: 13%;
+    left: 15%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    z-index: 1;
+
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20%;
+}
+
+.button1 {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.glassmorph-item {
+    display: flex;
+    align-items: center;
+}
+
+
+            @media screen and (max-width: 600px) {
+            .rectangle {
+                width: 90%;
+                height: 70vh;
+                top: 20%;
             }
+            .rectangle img {
+                width: 90%; /* Adjust this percentage as needed */
+                height: auto;
+                max-width: 100%; /* Ensures the image does not exceed its original size */
+                object-fit: contain;
+                position: absolute;
+                margin-top: 20%;
+                left: 5%;
+            }
+
+           
+
+            .she {
+                font-size: 24px;
+                border-radius: 20px;
+                padding: 8px 16px;
+                margin-bottom: 20%;
+            }
+
+            .text {
+                font-size: 18px;
+                top: 65%;
+                margin-top: -60px;
+            }
+
+            .input {
+                top: 10%; 
+                margin-left: -1%;
+
+            }
+            .icons {
+                display: flex;
+                align-items: center;
+                padding: 30px;
+                cursor: pointer;
+                position: absolute;
+                right: 5%;
+            }
+
+            
+        .menu-toggle {
+            display: none;
         }
 
-        /* Body styles */
-        body {
-            background-color: var(--background);
-            font-family: "Archivo Black", "Archivo", sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
+        .glassmorph {
+            position: absolute;
+            top: 10%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 300px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            display: none; /* Hide by default */
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
+            padding: 1rem;
+            margin: 15.5rem 0;
+            margin-left: 40%;
         }
 
-        /* H1 styles */
-        h1 {
-            font-size: 65px;
-            text-transform: uppercase;
-            font-weight: normal;
-            display: block;
-            max-width: 80vw;
-            min-height: 90px;
-            height: auto;
-            text-align: center;
-            margin-bottom: 50%;
-            margin: 40%;
+        .menu-toggle:checked ~ .glassmorph {
+            display: flex;
         }
+        .glassmorph-item {
+            margin: 0.5rem 0;
+    }
+        .icons .bx-menu,
+        .icons .bx-x {
+            display: inline-block; 
+    }
+
+        .icons i {
+            font-size: 50px;
+            display: none;
+        }
+
+        .icons .bx-x {
+            display: none;
+        }
+
+        
+            
+            }
+
+
+        @media screen and (max-width: 992px) {
+                .glassmorph {
+                    padding: 1.3rem 5%;
+                }
+            }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            cursor: pointer;
+            position: absolute;
+            right: 5%;
+        }
+
+        .icons i {
+            font-size: 24px;
+            display: none;
+        }
+        .icons x {
+            display: none;
+
+        }
+        .menu-toggle:checked + .icons .bx-x {
+            display: inline-block;
+    }
+
+    .menu-toggle:checked + .icons .bx-menu {
+        display: none;
+    }
+
+    .icons i {
+            font-size: 50px;
+            display: none;
+        }
+
+        .icons .bx-x {
+
+            display: none; }
+     
+    @media screen and (max-width: 782px) {
+            .rectangle {
+                width: 90%;
+                height: 70vh;
+                top: 20%;
+            }
+            .rectangle img {
+                width: 90%; 
+                height: auto;
+                max-width: 100%; /* Ensures the image does not exceed its original size */
+                object-fit: contain;
+                position: absolute;
+                top: -5%;
+                left: 5%;
+            }
+
+           
+
+            .she {
+                font-size: 24px;
+                border-radius: 20px;
+                padding: 8px 16px;
+                margin-bottom: 10%;
+            }
+
+            .text {
+                font-size: 18px;
+                top: 65%;
+                margin-top: -40px;
+            }
+
+            .input {
+                top: 10%; 
+                margin-left: 8%;
+
+            }
+            .icons {
+                display: flex;
+            align-items: center;
+            padding: 30px;
+            cursor: pointer;
+            position: absolute;
+            right: 5%;
+            }
+
+            
+        
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .glassmorph {
+            position: absolute;
+            top: 10%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 300px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            display: none; /* Hide by default */
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            margin: 15.5rem 0;
+            margin-left: 40%;
+        }
+
+        .menu-toggle:checked ~ .glassmorph {
+            display: flex;
+        }
+        .glassmorph-item {
+        margin: 0.5rem 0;
+    }
+        .icons .bx-menu,
+        .icons .bx-x {
+        display: inline-block; 
+    }
+
+        .icons i {
+            font-size: 50px;
+            display: none;
+        }
+
+        .icons .bx-x {
+
+            display: none;
+        }
+    }
+
     </style>
 </head>
 
 <body>
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
 
-    <h1 class="playful" aria-label="Wash your hands">
-        <span aria-hidden="true">A</span><span aria-hidden="true">b</span><span aria-hidden="true">o</span><span aria-hidden="true"></span><span aria-hidden="true">u</span><span aria-hidden="true">t</span>
-    </h1>
+    <div class="container"></div>
+
+    <div class="logo-container" id="header">
+        <!-- Use input type="checkbox" as a toggle -->
+        <input type="checkbox" id="menuToggle" class="menu-toggle">
+        <label for="menuToggle" class="icons">
+            <i class='bx bx-menu'></i>
+            <i class='bx bx-x'></i>
+        </label>
+            
+
+
+        <img class="profile" src="profilelogo.png" alt="Profile Logo">
+        <nav class="glassmorph">
+            <div class="glassmorph-item">
+                <button onclick="location.href='index.html'">HOME</button>
+            </div>
+            <div class="glassmorph-item">
+                <button onclick="location.href='educ.html'">GALLERY</button>
+            </div>
+            <div class="glassmorph-item">
+                <button onclick="location.href='skill.html'">PERSONAL</button>
+            </div>
+            <div class="glassmorph-item">
+                <button onclick="location.href='per.html'">FEEDBACK</button>
+            </div>
+            <div class="glassmorph-item">
+                <button onclick="location.href='about.html'">ABOUT</button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="rectangle">
+        <img src="know.png" alt="Knowledge">
+        <a class="she" href="who.html">Who is she? </a>
+    </div>
+
+    <div class="text">
+        <p>Welcome to my website! I'm Cyril, and this is where I share my life's journey, thoughts, and passions. Join me in
+            exploring what makes me tick and the stories that have shaped who I am. Welcome to my world! </br>
+        </p>
+    </div>
+
+    <p id="visitorInfo" class="input"></p>
+
+    <script>
+        let lastScroll = 0;
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 0) {
+                header.classList.add('transparent-bg');
+            } else {
+                header.classList.remove('transparent-bg');
+            }
+        });
+
+        var visitorName = localStorage.getItem("visitorName");
+
+        var visitorInfo = document.getElementById("visitorInfo");
+        if (visitorName) {
+            visitorInfo.textContent = "Welcome, " + visitorName + "!";
+        } else {
+            visitorInfo.textContent = "Welcome!";
+        }
+
+        function toggleDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function hideDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = 'none';
+
+
+            
+        }
+
+        
+    </script>
+
 </body>
-
 </html>

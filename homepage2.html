@@ -29,6 +29,8 @@
     background-image: linear-gradient(45deg, #1F1717, #CE5A67, #F4BF96, #1F1717);
     background-size: 300% 300%;
     animation: color 12s ease-in-out infinite;
+    overflow-y: hidden;
+
 }
 
 @keyframes color {
@@ -484,7 +486,58 @@
             display: none;
         }
     }
+    @media screen and (max-width: 1280px) {
+    
+        .glassmorph {
+        /* Adjust the positioning properties to move it to the left */
+        right: unset;
+        left: 5%; /* Adjust this value as needed */
+        transform: translateX(-50%);
+    }
+    .rectangle img{
+        position: absolute;
+        top: 20%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%);
+        margin-bottom: 200%;
+        height: 100%;
+        width: 100%;
+    }
+    .rectangle {
+        top: 15%;
+        width: 85%;
+    height: 65vh;
+    margin-right: 20px;
+    
+    }
+    .text {
+        margin-top: 75%;
+        font-size: 40px;
+    }
+    .she {
+    margin-bottom: 35%;
+    height: 50px;
+    width: 30%;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 100%;
+    height: 100vh; /* Adjust the height to cover the full screen */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    background-image: linear-gradient(45deg, #1F1717, #CE5A67, #F4BF96, #1F1717);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    overflow-y: hidden;
+}
+.input {
+    top: 70px 0px;
+}
 
+}
     </style>
 </head>
 

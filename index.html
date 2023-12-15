@@ -2,9 +2,9 @@
 <html>
 <head>
     <link rel="styles" href="styles.css">
-
     <title>Cyril's Profile</title>
     <style>
+        /* General styles */
         body {
             background-image: url('Loadingpage.jpg');
             background-size: cover;
@@ -49,11 +49,9 @@
         }
 
         /* Media queries for smartphones */
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 660px) {
             .button, .start {
                 display: none;
-                width: 200px;
-                height: 100px;
             }
 
             body {
@@ -62,17 +60,69 @@
         }
 
         /* Additional media query for smaller screens */
-        @media (max-width: 391px) {
+        @media (max-width: 1136px) {
             .button {
-                position: absolute;
-                top: 65%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 200px;
-                height: 100px;
-            }
+            position: fixed;
+            bottom: 150px;
+            right: 50%;
+            width: 200px;
+            height: 100px;
+            font-size: 30.5px;
+            border-color: pink;
+            transition: box-shadow 0.3s;
+        }
+        .start {
+            position: fixed;
+            bottom: 130px;
+            right: 50%;
+            transform: translateX(50%);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            color: #6D5A5A;
+            margin: 0;
+        }
+        body {
+            
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 200vh;
+            margin: 0;
+            width: auto;
+            transition: opacity 0.5s;
+        }
+        @media (max-width: 1280px) {
+            .button {
+            position: fixed;
+            bottom: 150px;
+            right: 50%;
+            width: 200px;
+            height: 100px;
+            font-size: 32.5px;
+            border-color: pink;
+            transition: box-shadow 0.3s;
+        }
+        .start {
+            position: fixed;
+            bottom: 130px;
+            right: 50%;
+            transform: translateX(50%);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            color: #6D5A5A;
+            margin: 0;
+        }}
+        body {
+            
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            width: 100vw;
+            transition: opacity 0.5s;
         }
 
+           
+        }
     </style>
 </head>
 <body>
