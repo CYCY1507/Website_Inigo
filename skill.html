@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,600&display=swap');
+
+         body,
+    html {
+        margin: 0;
+    padding: 0;
+    height: 100%; /* Set the height to 100% of the viewport */
+    overflow-x: hidden;
+    }
+        body,
+        canvas {
+            position: absolute;
+            width: 100%;
+            height: 180%;
+            margin: 0;
+            padding: 0;
+            z-index: -1;
+        }
+
+
+        .card-container {
+            display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    .upper-cards,
+    .lower-cards {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Center the cards horizontally */
+        align-items: flex-start; /* Align cards to the top */
+        flex-wrap: wrap;
+        margin-top: 20px; 
+        margin: 20px;
+    }
+
+    .card {
+          position: relative;
+          width: 250px;
+          height: 350px;
+          background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+          margin: 10px; /* Added margin for spacing between cards */
+          float: left; /* Align cards horizontally */
+          margin: 4%;
+        }
+
+.card svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover {
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover .card__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+.card:hover svg {
+  scale: 0;
+  transform: rotate(-45deg);
+}
+@media screen and (max-width: 768px) {
+            .card {
+                width: calc(30% - 40px);
+            }
+            .h1 {
+                margin-top: 200%;}
+        }
+
+        @media screen and (min-width: 1200px) {
+            .card {
+        width: calc(25% - 20px); /* Adjust width for larger screens */
+    }
+            .h1 {
+                margin-bottom: 100px;
+            }
+        }
+
+    
+        .card__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #fff;
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .card:hover .card__content {
+            transform: translate(-50%, -50%) rotate(0deg);
+            opacity: 1;
+        }
+
+        .card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+.card:hover svg {
+  scale: 0;
+  transform: rotate(-45deg);
+}
+
+
+.lower-cards {
+            margin-top: 120vh; /* Adjust this value to create space between upper and lower cards */
+        }
+
+        .upper-cards {
+            margin-top: 60vh;
+        }
+
+        
+
+
+        h1 {
+        font-size: calc(15px + 13vh);
+        line-height: calc(20px + 20vh);
+        text-shadow: 0 0 5px pink, 0 0 15px pink, 0 0 20px pink, 0 0 40px pink, 0 0 60px pink, 0 0 10px pink, 0 0 98px #ff0000;
+        color: pink; /* Pink color using hexadecimal code */
+        font-family: 'Roboto Condensed', sans-serif;
+        text-align: center;
+        animation: blink 12s infinite;
+        -webkit-animation: blink 12s infinite;
+        margin-bottom: 50%;
+    }
+
+        body {
+            padding: 2vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @-webkit-keyframes blink {
+            20%,
+            24%,
+            55% {
+                color: #111;
+                text-shadow: none;
+            }
+
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                text-shadow: 0 0 5px pink, 0 0 15px pink, 0 0 20px pink, 0 0 40px pink, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+                color: #fff6a9;
+            }
+        }
+
+        @keyframes blink {
+            20%,
+            24%,
+            55% {
+                color: #111;
+                text-shadow: none;
+            }
+
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                text-shadow: 0 0 5px pink, 0 0 15px pink, 0 0 20px pink, 0 0 40px pink, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+                color: #fff6a9;
+            }
+        }
+
+        .blink {
+            animation: blink 1.5s infinite;
+            -webkit-animation: blink 1.5s infinite;
+        }
+
+
+    @-webkit-keyframes blink {
+        0%, 20%, 100% {
+            color: #111;
+            text-shadow: none;
+        }
+
+        10%, 30% {
+            color: pink;
+            text-shadow: 0 0 5px pink, 0 0 15px pink, 0 0 20px pink, 0 0 40px pink, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+        }
+    }
+
+    @keyframes blink {
+        0%, 20%, 100% {
+            color: #111;
+            text-shadow: none;
+        }
+
+        10%, 30% {
+            color: pink;
+            text-shadow: 0 0 5px pink, 0 0 15px pink, 0 0 20px pink, 0 0 40px pink, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+        }
+        
+        
+    }
+
+    
+    .button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: fixed; 
+  bottom: 20px; 
+  right: 20px;
+  display: block; /* Initially show the button */
+  z-index: 3;
+
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(181, 160, 255);
+  align-items: center;
+}
+
+.button:hover .svgIcon {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+.button::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Back to top";
+  color: white;
+  /* transition-duration: .3s; */
+  font-size: 0px;
+  right: 30px;
+  
+}
+
+.button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
+}
+
+    </style>
+</head>
+
+<body>
+    
+    <button class="button" style="display: none;">
+        <svg class="svgIcon" viewBox="0 0 384 512">
+          <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+        </svg>
+      </button>
+    
+    <canvas id="myCanvas"></canvas>
+    <div class="container">
+        <div class="card-container upper-cards">
+            <!-- First card -->
+            <div class="card">
+                <img class="image" src="image1.jpg">
+
+                <div class="card__content">
+                    <p class="card__title">Card Title</p>
+                    <p class="card__description">Card Description</p>
+                </div>
+            </div>
+
+            <!-- Second card -->
+            <div class="card">
+                <div class="card__content">
+                    <p class="card__title">Card Title</p>
+                    <p class="card__description">Card Description</p>
+                </div>
+            </div>
+            <!-- Third card -->
+            <div class="card">
+                <div class="card__content">
+                    <p class="card__title">Card Title</p>
+                    <p class="card__description">Card Description</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container lower-cards">
+            <!-- Fourth card -->
+            <div class="card">
+                <div class="card__content">
+                    <p class="card__title">Card Title</p>
+                    <p class="card__description">Card Description</p>
+                </div>
+            </div>
+
+            <!-- Fifth card -->
+            <div class="card">
+                <div class="card__content">
+                    <p class="card__title">Card Title</p>
+                    <p class="card__description">Card Description</p>
+                </div>
+            </div>
+            <!-- Sixth card -->
+            <div class="card">
+                <div class="card__content">
+                    <p class="card__title">Card Title</p>
+                    <p class="card__description">Card Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 id="scrollTrigger">
+        Get to know <span class="blink">m</span><span class="blink">o</span><span class="blink">r</span><span class="blink">e</span> about...
+    </h1>
+
+    <script>
+
+var button = document.querySelector('.button');
+
+// Find the h1 element
+var h1Element = document.getElementById('scrollTrigger');
+
+// Add a click event listener to the button
+button.addEventListener('click', function() {
+    // Scroll to the h1 element smoothly
+    h1Element.scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+        var prevScrollPos = window.pageYOffset;
+    var button = document.querySelector('.button');
+    var isScrollingUp = false;
+
+    function hideButton() {
+      button.style.display = 'none';
+    }
+
+    function showButton() {
+      button.style.display = 'block';
+    }
+
+    function handleScroll() {
+      var currentScrollPos = window.pageYOffset;
+
+      if (prevScrollPos > currentScrollPos) {
+        // Scrolling up
+        isScrollingUp = true;
+      } else {
+        // Scrolling down
+        isScrollingUp = false;
+      }
+
+      if (!isScrollingUp) {
+        showButton();
+      } else {
+        hideButton();
+      }
+
+      prevScrollPos = currentScrollPos;
+    }
+
+    window.addEventListener('scroll', handleScroll);
+function showButton() {
+            var button = document.querySelector('.button');
+            button.style.display = 'block';
+        }
+
+        // Detect scroll event to show the button after scrolling
+        window.addEventListener('scroll', function () {
+            if (!scrolled) {
+                showButton();
+                scrolled = true; // Set scrolled flag to true after scrolling
+            }
+        });
+
+      var scrollToBottom = false; // Flag to track if scrolled to bottom
+        var scrolled = false; // Flag to track if already scrolled
+
+        function performAutomaticScroll() {
+            var cardsSection = document.querySelector('.lower-cards');
+            cardsSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+            scrollToBottom = true; // Set scrolled to bottom flag to true after initial scrolling
+        }
+
+        // Delayed automatic scroll on page load after 5 seconds (5000 milliseconds)
+        setTimeout(function() {
+            if (!scrollToBottom) {
+                performAutomaticScroll();
+            }
+        }, 5000);
+
+        // Listen for user scroll events
+        window.addEventListener('scroll', function() {
+            // If user manually scrolls to the top and the page hasn't been automatically scrolled yet
+            if (window.scrollY === 0 && !scrollToBottom) {
+                // Perform the automatic scroll
+                performAutomaticScroll();
+            }
+        });
+
+        // Stop blinking when auto-scrolling
+        function stopBlinking() {
+            var blinkElements = document.querySelectorAll('.blink');
+            blinkElements.forEach(function(element) {
+                element.style.animation = 'none';
+                element.style.webkitAnimation = 'none';
+            });
+        }
+
+        // Detect scroll event and stop blinking on auto-scroll
+        window.addEventListener('scroll', function() {
+            if (!scrolled) {
+                stopBlinking();
+                scrolled = true;
+            }
+        });
+
+var maxx = document.body.clientWidth;
+var maxy = document.body.clientHeight;
+var halfx = maxx / 2;
+var halfy = maxy / 2;
+var canvas = document.createElement("canvas");
+document.body.appendChild(canvas);
+canvas.width = maxx;
+canvas.height = maxy;
+var context = canvas.getContext("2d");
+var dotCount = 200;
+var dots = [];
+// create dots
+for (var i = 0; i < dotCount; i++) {
+    dots.push(new dot());
+}
+
+// dots animation
+function render() {
+    context.fillStyle = "#000000";
+    context.fillRect(0, 0, maxx, maxy);
+    for (var i = 0; i < dotCount; i++) {
+        dots[i].draw();
+        dots[i].move();
+    }
+    requestAnimationFrame(render);
+}
+
+// dots class
+// @constructor
+function dot() {
+
+    this.rad_x = 2 * Math.random() * halfx + 1;
+    this.rad_y = 1.2 * Math.random() * halfy + 1;
+    this.alpha = Math.random() * 360 + 1;
+    this.speed = Math.random() * 100 < 50 ? 1 : -1;
+    this.speed *= 0.1;
+    this.size = Math.random() * 5 + 1;
+    this.color = 'rgba(255, 192, 203, 1)'; // Pink color values (adjust as needed)
+
+}
+
+// drawing dot
+dot.prototype.draw = function () {
+
+    // calc polar coord to decart
+    var dx = halfx + this.rad_x * Math.cos(this.alpha / 180 * Math.PI);
+    var dy = halfy + this.rad_y * Math.sin(this.alpha / 180 * Math.PI);
+    // set pink color
+    context.fillStyle = this.color;
+    // draw dot
+    context.fillRect(dx, dy, this.size, this.size);
+
+};
+
+// calc new position in polar coord
+dot.prototype.move = function () {
+
+    this.alpha += this.speed;
+
+};
+
+// start animation
+render();
+
+var lastBlink = document.querySelector('.blink:last-child');
+
+lastBlink.addEventListener('animationiteration', function () {
+    if (!scrolled) {
+        // Scroll to the cards section if not already scrolled and not at the top
+        if (window.scrollY > 0) {
+            var cardsSection = document.querySelector('.lower-cards');
+            cardsSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+            scrolled = true; // Set scrolled flag to true after scrolling
+        }
+    }
+});
+
+
+
+
+
+    </script>
+</body>
+
+</html>

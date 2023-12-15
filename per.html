@@ -1,0 +1,370 @@
+<!DOCTYPE>
+<html>
+<title>Leave your satisfaction</title>
+    <style>
+
+body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        canvas {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            margin: 0; /* Adding margin: 0; to remove any default margin */
+            padding: 0;
+            z-index: -1;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            position: fixed;
+            width: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .card {
+            background-color: #ffcccc; /* Change to your preferred pink color */
+            border-radius: 10px;
+            padding: 20px;
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .group {
+            position: relative;
+        }
+
+        .form .group label {
+            font-size: 14px;
+            color: rgb(237, 96, 117);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background-color:rgba(255, 255, 255, 0.5);
+            transition: all .3s ease;
+        }
+
+        .form .group input,
+        .form .group textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgb(237, 96, 117);;
+            margin-bottom: 20px;
+            outline: 0;
+            width: calc(105% - 22px);
+        }
+
+        .form .group input:placeholder-shown+ label,
+        .form .group textarea:placeholder-shown +label {
+            top: 10px;
+        }
+
+        .form .group input:focus,
+        .form .group textarea:focus {
+            border-color: #e33f3f;
+        }
+
+        .form .group input:focus+ label,
+        .form .group textarea:focus +label {
+            top: -10px;
+            left: 10px;
+            background-color: #ffcccc;
+            color: #8c1c1c;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form .group textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .form button {
+            background-color: #7e0c18;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form button:hover {
+            background-color: #ec5266;
+        }
+
+        :root {
+            --background: #E4FFF7;
+        }
+
+        /* Playful text animation styles */
+        .playful span {
+            position: relative;
+            color: #FF69B4; /* Set base pink color */
+            text-shadow: 
+                1px 1px 0 #FF69B4,
+                2px 2px 0 #FF69B4,
+                3px 3px 0 #FF69B4,
+                4px 4px 0 #FF69B4,
+                5px 5px 0 #FF69B4,
+                6px 6px 0 #FF69B4;
+            animation: scatter 1.75s infinite;
+        }
+
+        .playful span:nth-child(2n) {
+            color: #FF1493; /* Another shade of pink */
+            text-shadow: 
+                1px 1px 0 #FF1493,
+                2px 2px 0 #FF1493,
+                3px 3px 0 #FF1493,
+                4px 4px 0 #FF1493,
+                5px 5px 0 #FF1493,
+                6px 6px 0 #FF1493;
+            animation-delay: 0.3s;
+        }
+
+        /* Playful text animation styles */
+        .playful span {
+            position: relative;
+            color: #f65369;
+            text-shadow: textShadow(0.25, 6, #E485F8);
+            animation: scatter 1.75s infinite;
+        }
+
+        .playful span:nth-child(2n) {
+            color: #832320;
+            text-shadow: textShadow(0.25, 6, #f1757f);
+            animation-delay: 0.3s;
+        }
+
+        .playful span:nth-child(3n) {
+            color: #d1144a;
+            text-shadow: textShadow(0.25, 6, #9f416d);
+            animation-delay: 0.15s;
+        }
+
+        .playful span:nth-child(5n) {
+            color: #ce5d7f;
+            text-shadow: textShadow(0.25, 6, #E485F8);
+            animation-delay: 0.4s;
+        }
+
+        .playful span:nth-child(7n), .playful span:nth-child(11n) {
+            color: #b2093b;
+            text-shadow: textShadow(0.25, 6, #a95959);
+            animation-delay: 0.25s;
+        }
+
+        /* Keyframes for the scatter animation */
+        @keyframes scatter {
+            0% {
+                top: 0;
+            }
+            50% {
+                top: -10px;
+            }
+            100% {
+                top: 0;
+            }
+           
+        }
+
+        /* Body styles */
+        body {
+            background-color: var(--background);
+            font-family: "Archivo Black", "Archivo", sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* H1 styles */
+        h1 {
+            font-size: 65px;
+            text-transform: uppercase;
+            font-weight: normal;
+            display: block;
+            max-width: 80vw;
+            min-height: 90px;
+            height: auto;
+            text-align: center;
+            margin: 0;
+            z-index: 5;
+            margin-bottom: 35%;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="backgroundCanvas"></canvas>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
+
+    <h1 class="playful" aria-label="Wash your hands">
+        <span aria-hidden="true">A</span><span aria-hidden="true">b</span><span aria-hidden="true">o</span><span aria-hidden="true"></span><span aria-hidden="true">u</span><span aria-hidden="true">t</span>
+    </h1>
+
+    <div class="container">
+        <div class="card">
+            <span class="title">Leave your comment</span>
+            <form class="form">
+                <div class="group">
+                    <input required="" type="text" name="name" id="name" placeholder="">
+                    <label for="name">Name</label>
+                </div>
+                <div class="group">
+                    <textarea id="userFeedback" name="userFeedback" rows="4" placeholder="" required></textarea>
+                    <label for="userFeedback">Feedback</label>
+                </div>
+                <button type="button" onclick="sendFeedback()">Send Feedback</button>
+            </form>
+        </div>
+    </div>
+
+
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+     emailjs.init("48rltI1IpM2RoHpEh");
+
+function sendFeedback() {
+    const userName = document.getElementById("name").value;
+    const userFeedback = document.getElementById("userFeedback").value;
+
+    if (userName.trim() === "" || userFeedback.trim() === "") {
+        alert("Please enter both your name and feedback.");
+        return;
+    }
+
+    emailjs.send("service_website", "template_website", {
+        from_name: userName,
+        message: userFeedback,
+    })
+    .then(function(response) {
+        console.log("Email sent successfully:", response);
+        alert("Feedback sent successfully!");
+    }, function(error) {
+        console.error("Error sending email:", error);
+        alert("Error sending feedback. Please try again later.");
+    });
+}
+
+var maxx = document.body.clientWidth;
+var maxy = document.body.clientHeight;
+var halfx = maxx / 2;
+var halfy = maxy / 2;
+var canvas = document.createElement("canvas");
+document.body.appendChild(canvas);
+canvas.width = maxx;
+canvas.height = maxy;
+var context = canvas.getContext("2d");
+var dotCount = 200;
+var dots = [];
+// create dots
+for (var i = 0; i < dotCount; i++) {
+    dots.push(new dot());
+}
+
+// dots animation
+function render() {
+    context.fillStyle = "#000000";
+    context.fillRect(0, 0, maxx, maxy);
+    for (var i = 0; i < dotCount; i++) {
+        dots[i].draw();
+        dots[i].move();
+    }
+    requestAnimationFrame(render);
+}
+
+// dots class
+// @constructor
+function dot() {
+
+    this.rad_x = 2 * Math.random() * halfx + 1;
+    this.rad_y = 1.2 * Math.random() * halfy + 1;
+    this.alpha = Math.random() * 360 + 1;
+    this.speed = Math.random() * 100 < 50 ? 1 : -1;
+    this.speed *= 0.1;
+    this.size = Math.random() * 5 + 1;
+    this.color = 'rgba(255, 192, 203, 1)'; // Pink color values (adjust as needed)
+
+}
+
+// drawing dot
+dot.prototype.draw = function () {
+
+    // calc polar coord to decart
+    var dx = halfx + this.rad_x * Math.cos(this.alpha / 180 * Math.PI);
+    var dy = halfy + this.rad_y * Math.sin(this.alpha / 180 * Math.PI);
+    // set pink color
+    context.fillStyle = this.color;
+    // draw dot
+    context.fillRect(dx, dy, this.size, this.size);
+
+};
+
+// calc new position in polar coord
+dot.prototype.move = function () {
+
+    this.alpha += this.speed;
+
+};
+
+// start animation
+render();
+
+var lastBlink = document.querySelector('.blink:last-child');
+
+lastBlink.addEventListener('animationiteration', function () {
+    if (!scrolled) {
+        // Scroll to the cards section if not already scrolled and not at the top
+        if (window.scrollY > 0) {
+            var cardsSection = document.querySelector('.lower-cards');
+            cardsSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+            scrolled = true; // Set scrolled flag to true after scrolling
+        }
+    }
+});
+
+    </script>
+      
+
+</body>
+</html>

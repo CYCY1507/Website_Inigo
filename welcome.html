@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <style>
+        body {
+            background-color: #FFACAC; 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .gif {
+            width: 300px; 
+            height: 250px;
+            transition: opacity 1s; 
+        }
+
+        .wait {
+            position: fixed;
+            bottom: 50px;
+            right: 50%;
+            transform: translateX(50%);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            font-style: italic;
+            color: #6D5A5A;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <img class="gif" src="logo.gif" alt="Your GIF">
+
+    <script>
+        window.onload = function() {
+            var gif = document.querySelector('.gif');
+            setTimeout(function() {
+                gif.style.opacity = '0'; 
+                setTimeout(function() {
+                    gif.src = 'HELLO.gif'; 
+                    setTimeout(function() {
+                        gif.style.opacity = '1'; 
+                        setTimeout(function() {
+                            window.location.href = 'Loadingpage.html'; 
+                        }, 3000); 
+                    }, 1000); 
+                }, 2000); 
+            }, 3000); 
+        };
+    </script>
+</body>
+</html>

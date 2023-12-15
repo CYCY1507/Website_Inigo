@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Cyril's Profile</title>
+
+    <style>
+        body {
+            background-color: #FFACAC;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            opacity: 1;
+            transition: opacity 1.5s;
+        }
+        body.hidden {
+            opacity: 1;
+        }
+
+        .gif {
+            width: 600px;
+            height: auto;
+        }
+        .wait {
+            position: fixed;
+            bottom: 50px;
+            right: 50%;
+            transform: translateX(50%);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            font-style: italic;
+            color: #6D5A5A;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <img class="gif" src="Wireframe.gif" alt="Your GIF">
+    <p class="wait">Please wait to load...</p>
+
+    <script>
+        window.onload = function() {
+            document.querySelector('.gif').classList.add('hidden');
+
+            setTimeout(function() {
+                window.location.href = 'Homepage.html';
+            }, 3000);
+        };
+    </script>
+</body>
+</html>

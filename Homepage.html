@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cyril's Homepage</title>
+        <style>
+        body {
+                background-image: url('Background.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 100vh;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+        .container { 
+                position: relative;
+                width: 500px; 
+                min-height: 400px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 10px;
+                backdrop-filter: blur(5px); 
+                box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+                border: 1px solid rgba(255,255,255,0.1);
+                border-right: 1px solid rgba(255,255,255,0.2);
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+        .form {
+                width: 80%;
+                padding: 20px;
+                text-align: center;
+                
+            }
+
+        .form h3 {
+                color: white;
+                font-size: 24px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                margin-top: px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Helvetica, sans-serif;
+                
+            }
+
+        .inputbox {
+                margin-bottom: 20px;
+            }
+
+        .inputbox input {
+                width: 100%;
+                padding: 8px;
+                font-size: 16px;
+                border: none;
+                border-bottom: 1px solid white;
+                background: transparent;
+                color: white;
+            }
+
+        .button {
+             cursor: pointer;
+             background-color: #F7D27F;
+             color: white;
+             border: none;
+             padding: 8px 16px;
+             border-radius: 35px;
+             transition: background-color 0.3s, color 0.3s;
+            max-width: 100px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-right: 1px solid rgba(255,255,255,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            width: 100px;
+            height: 40px;
+            }
+
+        .button:hover {
+            background-color: #FF8585; 
+            color: white; 
+}
+
+
+        .form .inputbox input {
+            width: 90%;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            border-radius: 35px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-right: 1px solid rgba(255,255,255,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+
+            }
+        .form .inputbox input [type= "submit"] {
+            background: white;
+            width: 100%;
+            margin-top: 30px;
+            }
+
+        img.cloud-image {
+            position: fixed;
+            top: 5%; 
+            right: 25%; 
+            max-width: 30%; 
+            height: auto;
+            border-radius: 50%;
+            width: 250px; 
+            animation: animate 10s linear infinite;
+        }
+
+        @keyframes animate{
+            0%, 100%{
+                transform: translateY(-20px);
+            }
+            50% {
+                transform: translateY(20px);
+            }
+        }
+
+        img.flower-image {
+            position: fixed;
+            top: 60%; 
+            left: 25%; 
+            max-width: 30%; 
+            height: auto;
+            width: 250px; 
+            animation: animate 10s linear infinite;
+        }
+        
+        
+    </style>
+
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="form">
+                <h3>Who is my visitor?</h3>
+                <form id="loginForm" onsubmit="return false;"> 
+                    <div class="inputbox">
+                        <input type="text" id="visitorName" placeholder="Enter your name" onkeypress="checkKey(event)">
+                    </div>
+                    <button class="button" onclick="saveAndRedirect()">Login</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <img class="cloud-image" src="cloud.png" alt="Cloud Image">
+    <img class="flower-image" src="flower.png" alt="Flower Image">
+
+    <script>
+        function saveAndRedirect() {
+            var name = document.getElementById('visitorName').value;
+
+            if (name === "") {
+                alert("Please enter your name!");
+            } else {
+                localStorage.setItem("visitorName", name);
+                window.location.href = 'homepage2.html';
+            }
+        }
+
+        function checkKey(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); 
+                saveAndRedirect(); 
+            }
+        }
+    </script>
+</body>
+</html>

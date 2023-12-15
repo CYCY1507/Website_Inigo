@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>GALLERY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+  
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        height: 100vh; /* Adjust the height to cover the full screen */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    background-image: linear-gradient(45deg, #CE5A67,  #1F1717);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+      }
+
+
+
+
+@keyframes color {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }}
+
+            
+  
+      .swiper {
+        width: 100%;
+        padding-top: 200px;
+        padding-bottom: 50px;
+      }
+  
+      .swiper-slide {
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+      }
+  
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+      }
+
+      .swiper-slide h6 {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 5px 10px;
+        border-radius: 5px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .swiper-slide:hover h6 {
+        opacity: 1;
+      }
+      
+      .text {
+        position: absolute;
+        bottom:120px;
+        width: 100%;
+        text-align: center;
+        color: black;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .text.active {
+        opacity: 1;
+      }
+
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+  color: #eee;
+}
+.container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-top: 70px; /* Adjust the padding as needed */
+        }
+
+        .container p {
+            font-size: 3rem;
+            padding: 0.5rem;
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+            text-align: center;
+            overflow: hidden;
+            color: #F4BF96; /* Change the color to white */
+        }
+.container p span.typed-text {
+  font-weight: bold;
+  color: #FCF5ED;
+}
+.container p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+
+
+    </style>
+  </head>
+  
+  <body>
+
+    <div class="body"></div>
+
+
+    <div class="container">
+        <p>A Gallery to <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+      </div>
+
+
+
+        </div>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" class="cute" style="background-image: url('3.png');">
+          <h6>CUTTEEEEE</h6>
+        </div>
+        <div class="swiper-slide" style="background-image: url('https://swiperjs.com/demos/images/nature-2.jpg');">
+          <h6>CUTTEEEEE</h6>
+        </div>
+        <!-- Add more slides with text as needed -->
+        <div class="swiper-slide" style="background-image: url('https://swiperjs.com/demos/images/nature-3.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('https://swiperjs.com/demos/images/nature-4.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('https://swiperjs.com/demos/images/nature-5.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('https://swiperjs.com/demos/images/nature-6.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('https://swiperjs.com/demos/images/nature-7.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('https://swiperjs.com/demos/images/nature-8.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('https://swiperjs.com/demos/images/nature-9.jpg');"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="text text1">This art represents life and death</div>
+    <div class="text text2">Second</div>
+    <div class="text text3">Third</div>
+    <div class="text text4">fourth</div>
+    <div class="text text5">Third</div>
+    <div class="text text6">Third</div>
+    <div class="text text7">Third</div>
+
+
+    <!-- Add more text elements as needed -->
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+          pagination: {
+  el: ".swiper-pagination",
+  
+},
+          on: {
+            slideChange: function () {
+              var activeSlideIndex = swiper.realIndex; // Get the active slide index
+              var texts = document.querySelectorAll('.text'); // Select all text elements
+              texts.forEach(function (text) {
+                text.classList.remove('active'); // Hide all text elements initially
+              });
+              var activeText = document.querySelector('.text.text' + (activeSlideIndex + 1)); // Get the text for the active slide
+              if (activeText) {
+                activeText.classList.add('active'); // Show the text for the active slide
+              }
+            },
+          },
+        });
+
+        const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
+
+const textArray = ["CREAT", "SHOWCASE", "TELL", "BRING LIFE"];
+const typingDelay = 200;
+const erasingDelay = 100;
+const newTextDelay = 2000; // Delay between current and next text
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < textArray[textArrayIndex].length) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+  	setTimeout(erase, newTextDelay);
+  }
+}
+
+function erase() {
+	if (charIndex > 0) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+    textArrayIndex++;
+    if(textArrayIndex>=textArray.length) textArrayIndex=0;
+    setTimeout(type, typingDelay + 1100);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+  if(textArray.length) setTimeout(type, newTextDelay + 250);
+});
+      </script>
+  </body>
+</html>

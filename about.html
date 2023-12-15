@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        body,
+        canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .card-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1; /* Ensure the card is above the canvas */
+        }
+
+        .card {
+            --bg: #ec6363;
+            --contrast: #e2e0e0;
+            --grey: #93a1a1;
+            position: relative;
+            padding: 9px;
+            background-color: var(--bg);
+            border-radius: 35px;
+            box-shadow: rgba(255, 192, 203, 0.8) 0px 50px 100px -20px, rgba(255, 192, 203, 0.6) 0px 30px 60px -30px, rgba(255, 192, 203, 0.7) 0px -2px 6px 0px inset; /* Adjusted shadow colors to pink */
+            width: 700px; /* Adjust the width */
+            height: 400px; /* Adjust the height */
+            
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: repeating-conic-gradient(var(--bg) 0.0000001%, var(--grey) 0.000104%) 60% 60%/600% 600%;
+            filter: opacity(10%) contrast(105%);
+        }
+
+        .card-inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+            border-radius: 30px;
+            /* Content style */
+            font-size: 30px;
+            font-weight: 900;
+            color: #fbf7f7;
+            text-align: center;
+            font-family: monospace;
+        }
+
+        @media (max-width: 782px) {
+            .card {
+                width: 500px; /* Adjust the width for screens at 782px */
+                height: 800px; /* Allow height to adjust according to content */
+                transform: scale(0.7); /* Scale down for screens at 782px */
+                margin-top: 20%;
+            }
+            body{
+            position: absolute;
+            width: 100%;
+            height: 110%;
+            margin: 0;
+            padding: 0;
+        }
+        .h1{
+            position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin-top: 20%; 
+            }
+        }
+        @media (max-width: 1200px) {
+
+            .card {
+                width: 500px; /* Adjust the width for screens at 782px */
+                height: 800px; /* Allow height to adjust according to content */
+                transform: scale(0.7); /* Scale down for screens at 782px */
+            }
+        canvas{
+            position: absolute;
+            width: 100%;
+            height: 120%;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin-bottom: 40%; /* Adjust the margin-top as needed */
+            }
+    }
+
+        :root {
+            --background: #E4FFF7;
+        }
+
+        /* Playful text animation styles */
+        .playful span {
+            position: relative;
+            color: #FF69B4; /* Set base pink color */
+            text-shadow: 
+                1px 1px 0 #FF69B4,
+                2px 2px 0 #FF69B4,
+                3px 3px 0 #FF69B4,
+                4px 4px 0 #FF69B4,
+                5px 5px 0 #FF69B4,
+                6px 6px 0 #FF69B4;
+            animation: scatter 1.75s infinite;
+            margin-bottom: 30%;
+        }
+
+        .playful span:nth-child(2n) {
+            color: #FF1493; /* Another shade of pink */
+            text-shadow: 
+                1px 1px 0 #FF1493,
+                2px 2px 0 #FF1493,
+                3px 3px 0 #FF1493,
+                4px 4px 0 #FF1493,
+                5px 5px 0 #FF1493,
+                6px 6px 0 #FF1493;
+            animation-delay: 0.3s;
+        }
+
+        /* Playful text animation styles */
+        .playful span {
+            position: relative;
+            color: #f65369;
+            text-shadow: textShadow(0.25, 6, #E485F8);
+            animation: scatter 1.75s infinite;
+        }
+
+        .playful span:nth-child(2n) {
+            color: #832320;
+            text-shadow: textShadow(0.25, 6, #f1757f);
+            animation-delay: 0.3s;
+        }
+
+        .playful span:nth-child(3n) {
+            color: #d1144a;
+            text-shadow: textShadow(0.25, 6, #9f416d);
+            animation-delay: 0.15s;
+        }
+
+        .playful span:nth-child(5n) {
+            color: #ce5d7f;
+            text-shadow: textShadow(0.25, 6, #E485F8);
+            animation-delay: 0.4s;
+        }
+
+        .playful span:nth-child(7n), .playful span:nth-child(11n) {
+            color: #b2093b;
+            text-shadow: textShadow(0.25, 6, #a95959);
+            animation-delay: 0.25s;
+        }
+
+        /* Keyframes for the scatter animation */
+        @keyframes scatter {
+            0% {
+                top: 0;
+            }
+            50% {
+                top: -10px;
+            }
+            100% {
+                top: 0;
+            }
+           
+        }
+
+        /* Body styles */
+        body {
+            background-color: var(--background);
+            font-family: "Archivo Black", "Archivo", sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* H1 styles */
+        h1 {
+            font-size: 65px;
+            text-transform: uppercase;
+            font-weight: normal;
+            display: block;
+            max-width: 80vw;
+            min-height: 90px;
+            height: auto;
+            text-align: center;
+            margin: 0;
+            z-index: 5;
+            margin-bottom: 35%;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="backgroundCanvas"></canvas>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
+
+    <h1 class="playful" aria-label="Wash your hands">
+        <span aria-hidden="true">A</span><span aria-hidden="true">b</span><span aria-hidden="true">o</span><span aria-hidden="true"></span><span aria-hidden="true">u</span><span aria-hidden="true">t</span>
+    </h1>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-overlay"></div>
+            <div class="card-inner">YOUR<br>CONTENT<br>HERE</div>
+        </div>
+    </div>
+
+    <canvas id="background"></canvas>
+
+    <script>
+
+var maxx = document.body.clientWidth;
+var maxy = document.body.clientHeight;
+var halfx = maxx / 2;
+var halfy = maxy / 2;
+var canvas = document.createElement("canvas");
+document.body.appendChild(canvas);
+canvas.width = maxx;
+canvas.height = maxy;
+var context = canvas.getContext("2d");
+var dotCount = 200;
+var dots = [];
+// create dots
+for (var i = 0; i < dotCount; i++) {
+    dots.push(new dot());
+}
+
+// dots animation
+function render() {
+    context.fillStyle = "#000000";
+    context.fillRect(0, 0, maxx, maxy);
+    for (var i = 0; i < dotCount; i++) {
+        dots[i].draw();
+        dots[i].move();
+    }
+    requestAnimationFrame(render);
+}
+
+// dots class
+// @constructor
+function dot() {
+
+    this.rad_x = 2 * Math.random() * halfx + 1;
+    this.rad_y = 1.2 * Math.random() * halfy + 1;
+    this.alpha = Math.random() * 360 + 1;
+    this.speed = Math.random() * 100 < 50 ? 1 : -1;
+    this.speed *= 0.1;
+    this.size = Math.random() * 5 + 1;
+    this.color = 'rgba(255, 192, 203, 1)'; // Pink color values (adjust as needed)
+
+}
+
+// drawing dot
+dot.prototype.draw = function () {
+
+    // calc polar coord to decart
+    var dx = halfx + this.rad_x * Math.cos(this.alpha / 180 * Math.PI);
+    var dy = halfy + this.rad_y * Math.sin(this.alpha / 180 * Math.PI);
+    // set pink color
+    context.fillStyle = this.color;
+    // draw dot
+    context.fillRect(dx, dy, this.size, this.size);
+
+};
+
+// calc new position in polar coord
+dot.prototype.move = function () {
+
+    this.alpha += this.speed;
+
+};
+
+// start animation
+render();
+
+</script>
+    </body>
+</html>
