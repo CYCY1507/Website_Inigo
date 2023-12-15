@@ -29,12 +29,10 @@
             width: 100px;
             height: 50px;
             font-size: 15.5px;
-            
             border-color: pink;
             transition: box-shadow 0.3s;
         }
 
-        
         .button:hover {
             box-shadow: 0 0 20px rgba(255, 0, 221, 0.5);
         }
@@ -50,27 +48,29 @@
             margin: 0;
         }
 
+        /* Media queries for smartphones */
         @media screen and (max-width: 600px) {
             .button, .start {
                 display: none;
+                width: 200px;
+                height: 100px;
             }
 
             body {
                 background-image: none;
             }
-
         }
+
+        /* Additional media query for smaller screens */
         @media (max-width: 391px) {
             .button {
                 position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 100px;
-}
-        }
-
+                top: 65%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 200px;
+                height: 100px;
+            }
         }
 
     </style>
