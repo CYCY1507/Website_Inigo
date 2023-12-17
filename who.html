@@ -85,6 +85,76 @@
                 line-height: 2.3;
 
             }
+            @media screen and (max-width: 1280px) {
+                body {
+            background: linear-gradient(to bottom, #fff7ad, #ffa9f9);
+    margin: 0;
+    height: 40vh; /* Adjusted to match the height of the viewport */
+    width: 190%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    padding: 0;
+    box-sizing: border-box;
+}
+            .pic1 {
+                position: absolute;
+                bottom: 75% ; /* Align the top of the image with the top of the page */
+                left: 66%; /* Adjust the right positioning if needed */
+                z-index: 4;
+                margin-bottom: 200px;
+                margin-right: 100px; /* Adjust the margin-right if needed */
+                height: 600px;
+            }
+.container1 {
+                width: 140%;
+                height: 125vh;
+                background: white;
+                backdrop-filter: blur(10px);
+                border-radius: 15px;
+                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+                display: flex;
+                flex-direction: column; /* Added to make content2 appear below bio */
+                align-items: center;
+                position: absolute;
+                top: 100px;
+                position: center;
+                border: 4px solid black;
+                z-index: 1;
+                left: 13%;
+                top: 15%;
+            }
+            .bio {
+                margin-bottom: 40px; /* Adjusted margin for better spacing */
+                font-family: 'Courier New', Courier, monospace;
+                letter-spacing: 7px;
+                margin-right: 50px;
+                margin-top: 10%;
+                font-size: 150px;
+            }
+            .content2 {
+                font-size: 60px;
+                margin-left: 100px;
+                letter-spacing: 7px;
+                line-height: 2.3;
+                margin-top: 6%;
+
+            }
+.container {
+    width: 100%;
+    height: 180vh; /* Adjust the height to cover the full screen */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    background-image: linear-gradient(45deg, #1F1717, #CE5A67, #F4BF96, #1F1717);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    overflow-y: hidden;
+}
+
+    }
+        
 
             
         </style>
@@ -93,7 +163,7 @@
         <div class="container"></div>
         <div class="container1">
             <img src="pic1.png" class="pic1">
-            <h1 class="bio">BIODATA</h1>
+            <h1 class="bio">INFORMATION</h1>
             <p class="content2">
                 <strong>Name:</strong> Cyril Anne Austria Inigo <br>
                 <strong>Age:</strong> 19 years old<br>
