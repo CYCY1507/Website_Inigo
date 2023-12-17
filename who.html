@@ -86,18 +86,18 @@
 
             }
             @media screen and (max-width: 1280px) {
-                body {
+        body {
             background: linear-gradient(to bottom, #fff7ad, #ffa9f9);
-    margin: 0;
-    height: 40vh; /* Adjusted to match the height of the viewport */
-    width: 190%;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    overflow-x: hidden;
-    background-attachment: fixed;
-    padding: 0;
-    box-sizing: border-box;
+            margin: 0;
+            height: 40vh; /* Adjusted to match the height of the viewport */
+            width: 190%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            overflow-x: hidden;
+            background-attachment: fixed;
+            padding: 0;
+            box-sizing: border-box;
 }
             .pic1 {
                 position: absolute;
@@ -108,7 +108,7 @@
                 margin-right: 100px; /* Adjust the margin-right if needed */
                 height: 600px;
             }
-.container1 {
+            .container1 {
                 width: 140%;
                 height: 125vh;
                 background: white;
@@ -142,24 +142,87 @@
                 margin-top: 6%;
 
             }
-.container {
-    width: 100%;
-    height: 180vh; /* Adjust the height to cover the full screen */
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
-    background-image: linear-gradient(45deg, #1F1717, #CE5A67, #F4BF96, #1F1717);
-    background-size: 300% 300%;
-    animation: color 12s ease-in-out infinite;
-    overflow-y: hidden;
-}
+            .container {
+                 width: 100%;
+                 height: 180vh; /* Adjust the height to cover the full screen */
+                 margin: 0; /* Remove margin */
+                 padding: 0; /* Remove padding */
+                 background-image: linear-gradient(45deg, #1F1717, #CE5A67, #F4BF96, #1F1717);
+                 background-size: 300% 300%;
+                 animation: color 12s ease-in-out infinite;
+                 overflow-y: hidden;
+}           
+.download {
+                position: absolute;
+                bottom: 90%; /* Adjust as needed */
+                left: 75%; /* Adjust as needed */
+                z-index: 2;
+                text-decoration: none;
+                font-weight: bold;
+                color: white;
+                display: block;
+                padding: 10px 20px;
+                border-radius: 20px;
+                background: rgba(255, 241, 179, 0);
+                border: 1px solid white;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+        }
 
+        @media screen and (max-width: 600px) {
+            /* Additional styles for even smaller screens */
+            .download {
+                bottom: 150%; /* Adjust as needed */
+                left: 75%; /* Adjust as needed */
+            }
+        }
+
+    .download {
+        position: absolute;
+            bottom: 90%;
+            left: 75%;
+            z-index: 2;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            display: block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: rgba(255, 241, 179, 0);
+            border: 1px solid white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            
     }
+    
+        .download:hover,
+        .download:focus {
+            background: pink;
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+            border: 1px solid black;
+        }
+
+        .download:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+
         
 
             
         </style>
     </head>
     <body>
+        <a href="CYRIL_INIGO_RESUME.pdf" download="Cyril_Anne_Inigo_Resume.pdf" class="download">DOWNLOAD RESUME</a>
+
         <div class="container"></div>
         <div class="container1">
             <img src="pic1.png" class="pic1">

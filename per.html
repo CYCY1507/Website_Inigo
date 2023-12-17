@@ -228,11 +228,12 @@ body,
             z-index: 5;
             margin-bottom: 35%;
             top: 40px;
+            margin-right: 2%;
         }
 
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width: 768px) {
             .h1 {
-                margin-bottom: 30%;
+                margin-bottom: 70%;
 
 
             }
@@ -240,17 +241,69 @@ body,
     background-color: #ffcccc;
     border-radius: 10px;
     padding: 25px;
-    width: 350px;
+    width:500px;
+    height: 300px;
+    top: 100%;
     display: flex;
     flex-direction: column;
     z-index: 2;
-    top: 20px;
+    margin-top: 20%;
 }
+        }
+        .button-container {
+            display: flex;
+            justify-content: center; /* Center the buttons horizontally */
+            margin-top: 20px;
+            position: absolute;
+            bottom: 15%; /* Adjust the buttons' position from the bottom */
+            width: 100%; /* Take full width */
+            z-index: 4;
+        }
+
+        /* Styles for the buttons */
+        .button-container .download {
+    display: block;
+    width: 200px;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #7e0c18;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 80%;
+    margin-left: 10%;
+    align-items: center;
+    z-index: 4;
+    width: auto; /* Adjust the button width */
+    margin: 15px 5px; /* Add margin */
+}
+
+
+        .button-container .download:hover {
+            background-color: #ec5266;
+            transform: scale(1.05);
+            z-index: 4;
+
+        }
+
+        .button-container .download:active {
+            transform: scale(0.95);
+            z-index: 4;
+
         }
     </style>
 </head>
 <body>
 
+    <div class="button-container">
+        <a class="download" href="https://www.facebook.com/cyrilanne.inigo?mibextid=ZbWKwL" target="_blank">FACEBOOK</a>
+        <a class="download" href="https://t.me/+639121859302" target="_blank">TELEGRAM</a>
+        <a class="download" href="https://www.instagram.com/cy_potato15?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">INSTAGRAM</a>
+    </div>
     <canvas id="backgroundCanvas"></canvas>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
 
