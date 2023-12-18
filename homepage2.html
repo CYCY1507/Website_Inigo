@@ -19,6 +19,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+.ako {
+                    display: none;
+                }
 
 .container {
     width: 100%;
@@ -32,6 +35,7 @@
     overflow-y: hidden;
 
 }
+
 
 @keyframes color {
             0% {
@@ -260,103 +264,18 @@
 }
 
 
-            @media screen and (max-width: 600px) {
-            .rectangle {
-                width: 90%;
-                height: 70vh;
-                top: 20%;
-            }
-            .rectangle img {
-                width: 90%; /* Adjust this percentage as needed */
-                height: auto;
-                max-width: 100%; /* Ensures the image does not exceed its original size */
-                object-fit: contain;
-                position: absolute;
-                margin-top: 20%;
-                left: 5%;
-            }
-
            
 
-            .she {
-                font-size: 24px;
-                border-radius: 20px;
-                padding: 8px 16px;
-                margin-bottom: 20%;
+
+        @media screen and (max-width:640px) {
+            .ako {
+                display: none;
             }
-
-            .text {
-                font-size: 18px;
-                top: 65%;
-                margin-top: -60px;
-            }
-
-            .input {
-                top: 10%; 
-                margin-left: -1%;
-
-            }
-            .icons {
-                display: flex;
-                align-items: center;
-                padding: 30px;
-                cursor: pointer;
-                position: absolute;
-                right: 5%;
-            }
-
-            
-        .menu-toggle {
-            display: none;
-        }
-
-        .glassmorph {
-            position: absolute;
-            top: 10%;
-            left: 30%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            max-width: 300px;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-            display: none; /* Hide by default */
-            flex-direction: column;
-            align-items: center;
-            padding: 1rem;
-            margin: 15.5rem 0;
-            margin-left: 40%;
-        }
-
-        .menu-toggle:checked ~ .glassmorph {
-            display: flex;
-        }
-        .glassmorph-item {
-            margin: 0.5rem 0;
-    }
-        .icons .bx-menu,
-        .icons .bx-x {
-            display: inline-block; 
-    }
-
-        .icons i {
-            font-size: 50px;
-            display: none;
-        }
-
-        .icons .bx-x {
-            display: none;
-        }
-
-        
-            
-            }
-
-
-        @media screen and (max-width: 992px) {
                 .glassmorph {
                     padding: 1.3rem 5%;
+                }
+                .ako {
+                    display: none;
                 }
             }
 
@@ -394,99 +313,15 @@
 
             display: none; }
      
-    @media screen and (max-width: 782px) {
-            .rectangle {
-                width: 90%;
-                height: 70vh;
-                top: 20%;
-            }
-            .rectangle img {
-                width: 90%; 
-                height: auto;
-                max-width: 100%; /* Ensures the image does not exceed its original size */
-                object-fit: contain;
-                position: absolute;
-                top: -5%;
-                left: 5%;
-            }
-
-           
-
-            .she {
-                font-size: 24px;
-                border-radius: 20px;
-                padding: 8px 16px;
-                margin-bottom: 10%;
-            }
-
-            .text {
-                font-size: 18px;
-                top: 65%;
-                margin-top: -40px;
-            }
-
-            .input {
-                top: 10%; 
-                margin-left: 8%;
-
-            }
-            .icons {
-                display: flex;
-            align-items: center;
-            padding: 30px;
-            cursor: pointer;
-            position: absolute;
-            right: 5%;
-            }
-
-            
-        
-
-        .menu-toggle {
-            display: none;
-        }
-
-        .glassmorph {
-            position: absolute;
-            top: 10%;
-            left: 30%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            max-width: 300px;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-            display: none; /* Hide by default */
-            flex-direction: column;
-            align-items: center;
-            padding: 1rem;
-            margin: 15.5rem 0;
-            margin-left: 40%;
-        }
-
-        .menu-toggle:checked ~ .glassmorph {
-            display: flex;
-        }
-        .glassmorph-item {
-        margin: 0.5rem 0;
-    }
-        .icons .bx-menu,
-        .icons .bx-x {
-        display: inline-block; 
-    }
-
-        .icons i {
-            font-size: 50px;
-            display: none;
-        }
-
-        .icons .bx-x {
-
-            display: none;
-        }
-    }
+ 
     @media screen and (max-width: 1280px) {
+        .rectangle {
+                
+                top: 20%;
+                width: 140%;
+                height: 130vh;
+                margin-right: 35%;
+            }
         body {
             background: linear-gradient(to bottom, #fff7ad, #ffa9f9);
     margin: 0;
@@ -500,13 +335,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-.menu-toggle:checked + .icons .bx-x {
-            display: none;
-    }
+.menu-toggle:checked ~ .icons .bx-x {
+    display: inline-block;
+}
 
-    .menu-toggle:checked + .icons .bx-menu {
-        display: none;
-    }
+.menu-toggle:checked ~ .icons .bx-menu {
+    display: none;
+}
         .glassmorph {
         /* Adjust the positioning properties to move it to the left */
         right: unset;
@@ -519,45 +354,35 @@
     .rectangle img{
         position: absolute;
         top: 20%; /* Center vertically */
-        left: 50%; /* Center horizontally */
+        left: 30%; /* Center horizontally */
         transform: translate(-50%, -50%);
         margin-bottom: 200%;
         height: 130%;
         width: 120%;
     }
-    .rectangle {
-        top: 20%;
-        width: 140%;
-    height: 130vh;
-    margin-right: 35%;
-    
-    }
     .text {
-        position: absolute;
-        left: 80%;
-        transform: translateX(-50%);
-        top: 90%; /* Move the element down by 50% of its container's height */
-        font-size: 35px;
-        text-align: center; /* Center the text horizontally */
-        margin: 0; /* Remove any margin */
-    }
+    display: none;
+}
     .she {
-    margin-bottom: 35%;
-    height: 80px;
-    width: 30%;
-    font-size: 45px;
+    margin-bottom: 40%;
+    height: 200px;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50px;
+    font-size:90px;
+    border-radius: 150px;
+    padding: 10px 5px;
 }
 .profile {
     top: 10%;
-    width: 25%;
+    width: 30%;
     height: auto;
     cursor: pointer;
-    margin-top: 10%;
-    left: 8%;
+    margin-top: 13%;
+    margin-left: 10%;
+    left: 50%;
 }
 .container {
     width: 100%;
@@ -590,25 +415,122 @@
 .glassmorph-item button {
     text-decoration: none;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 100px;
     color: #333;
     display: block;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 60px 70px;
+    top: 20%;
+    border-radius: 100px;
     background: rgba(255, 241, 179, 0); /* Transparent background */
     border: 1px solid rgba(255, 241, 179, 0);
     transition: all 0.3s ease;
     cursor: pointer;
+    
 }
+.rectangle {
+                width: 170%;
+                height: 150vh;
+                top: 20%;
+                left: 30px;
+            }
+            .rectangle img {
+                width: 120%; 
+                height: auto;
+                max-width: 200%; /* Ensures the image does not exceed its original size */
+                object-fit: contain;
+                position: absolute;
+                top: 20%;
+                left: 50%;
+            }
+
+            .input {
+                top: 20%; 
+                margin-left: 3%;
+
+            }
+            .icons {
+                display: flex;
+            align-items: center;
+            padding: 30px;
+            cursor: pointer;
+            position: absolute;
+            right: 5%;
+            }
+
+            
+        
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .glassmorph {
+            position: absolute;
+            top: 700%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            width: 1200%;
+            max-width:1200px;
+            height: 1300%;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            display: none; /* Hide by default */
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            margin: 15.5rem 0;
+            margin-left: 40%;
+        }
+
+        .menu-toggle:checked ~ .glassmorph {
+            display: flex;
+        }
+        .glassmorph-item {
+        margin: 0.5rem 0;
+    }
+        .icons .bx-menu,
+        .icons .bx-x {
+        display: inline-block;
+        height: 20%;
+        width: 100%;
+        margin:80%; 
+        margin-top: 300px;
+        }
+
+        .icons i {
+            font-size: 200px;
+        }
+
+        .icons .bx-x {
+            height: 20%; 
+            display: none;
+        }
+        .ako {
+            width: 110%; 
+                height: auto;
+                max-width: 200%; /* Ensures the image does not exceed its original size */
+                object-fit: contain;
+                position: absolute;
+                top: 90%;
+                left: 34%;
+                z-index: 5;
+                display: flex;
+}
+        
+    }
+    
 
 
-}
+
     </style>
 </head>
 
 <body>
 
     <div class="container"></div>
+    <img class="ako" src="222.png">
 
     <div class="logo-container" id="header">
         <!-- Use input type="checkbox" as a toggle -->
@@ -642,7 +564,7 @@
 
     <div class="rectangle">
         <img src="know.png" alt="Knowledge">
-        <a class="she" href="who.html">Who is she? </a>
+        <a class="she" href="who.html">INFORMATION </a>
     </div>
 
     <div class="text">
