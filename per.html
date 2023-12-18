@@ -231,7 +231,7 @@ body,
             margin-right: 2%;
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1280px) {
             .h1 {
                 margin-bottom: 70%;
 
@@ -249,18 +249,26 @@ body,
     z-index: 2;
     margin-top: 20%;
 }
+.button-container {
+            display: flex;
+            justify-content: center; /* Center the buttons horizontally */
+            margin-bottom: 20px;
+            position: absolute;
+            width: 100%; /* Take full width */
+            z-index: 4;
+        }
+
         }
         .button-container {
             display: flex;
             justify-content: center; /* Center the buttons horizontally */
-            margin-top: 20px;
+            margin-bottom: 10px;
             position: absolute;
             bottom: 15%; /* Adjust the buttons' position from the bottom */
             width: 100%; /* Take full width */
             z-index: 4;
         }
 
-        /* Styles for the buttons */
         .button-container .download {
     display: block;
     width: 200px;

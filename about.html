@@ -61,10 +61,11 @@
 
         @media (max-width: 782px) {
             .card {
-                width: 500px; /* Adjust the width for screens at 782px */
+                width: 800px; /* Adjust the width for screens at 782px */
                 height: 800px; /* Allow height to adjust according to content */
                 transform: scale(0.7); /* Scale down for screens at 782px */
                 margin-top: 20%;
+                margin-right: 200%;
             }
             body{
             position: absolute;
@@ -74,35 +75,64 @@
             padding: 0;
         }
         .h1{
-            position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                margin-top: 20%; 
+            display: none;
             }
         }
-        @media (max-width: 1200px) {
+        @media (max-width: 1280px) {
 
             .card {
-                width: 500px; /* Adjust the width for screens at 782px */
-                height: 800px; /* Allow height to adjust according to content */
-                transform: scale(0.7); /* Scale down for screens at 782px */
+                --bg: #ec6363;
+    --contrast: #e2e0e0;
+    --grey: #93a1a1;
+    position: relative;
+    padding: 9px;
+    background-color: var(--bg);
+    border-radius: 35px;
+    box-shadow: rgba(255, 192, 203, 0.8) 0px 50px 100px -20px, rgba(255, 192, 203, 0.6) 0px 30px 60px -30px, rgba(255, 192, 203, 0.7) 0px -2px 6px 0px inset; /* Adjusted shadow colors to pink */
+    width: 1400px; /* Adjust the width */
+    height: 1500px; /* Adjust the height */
+
             }
-        canvas{
-            position: absolute;
+            .card-inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
             width: 100%;
-            height: 120%;
+            height: 100%;
+            background-color: pink;
+            border-radius: 30px;
+            /* Content style */
+            font-size: 60px;
+            font-weight: 900;
+            color: #000000;
+            text-align: center;
+            font-family: monospace;
+        }
+            .card-container {
+                position: absolute;
+    top: 80%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+        display: flex;
+
+    justify-content: center;
+    align-items: center;
+        }
+        canvas {
+            position: absolute;
+            width: 220%;
+            height: 230%;
             margin: 0;
             padding: 0;
+            align-items: center;
+        
         }
-        .h1 {
-                position: absolute;
-                top: 65%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                margin-bottom: 60%; /* Adjust the margin-top as needed */
-            }
-    }
+        h1 {
+            display: none;
+        }
+        }
 
         :root {
             --background: #E4FFF7;
